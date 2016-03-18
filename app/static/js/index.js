@@ -3,7 +3,7 @@ angular
     .config(function ($mdThemingProvider, $routeProvider, $mdIconProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: "../static/partials/dashboard.html"
+                templateUrl: "../static/partials/register.html"
             }).when('/dashboard', {
                 templateUrl: "../static/partials/dashboard.html"
             }).when('/users', {
@@ -45,14 +45,17 @@ angular
 angular
     .module('SampleAPP')
     .controller('MainController', [
-          '$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog', '$location',
+          '$scope','$rootScope', '$mdBottomSheet', '$mdSidenav', '$mdDialog', '$location',
           MainController
        ]);
 
-function MainController($scope, $mdBottomSheet, $mdSidenav, $mdDialog, $location) {
+function MainController($scope,$rootScope, $mdBottomSheet, $mdSidenav, $mdDialog, $location) {
+    
     $scope.toggleSidenav = function (menuId) {
         $mdSidenav(menuId).toggle();
     };
+    $rootScope.app = {};
+    $rootScope.app.showNavBar = false;
     $scope.menu = [
         {
             link: 'dashboard',

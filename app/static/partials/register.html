@@ -1,0 +1,41 @@
+<div ng-controller="RegisterController">
+    <h3>Register User</h3>
+    <div layout="row">
+        <div flex="60">
+            <form name="registerForm" novalidate>                
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>First name</label>
+                        <input ng-model="user.firstName" type="text" name="first" required>                        
+                    </md-input-container>                   
+                    <div ng-show="registerForm.$submitted || registerForm.first.$touched">
+                      <div class="error" ng-show="registerForm.first.$error.required">Enter First name.</div>
+                    </div>
+                    
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Last Name</label>
+                        <input ng-model="user.secondName" type="text" name="second" required>
+                    </md-input-container>
+                    <div ng-show="registerForm.$submitted || registerForm.second.$touched">
+                      <div class="error" ng-show="registerForm.second.$error.required">Enter Second name.</div>
+                    </div>
+                
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Email</label>
+                    <input ng-model="user.email" type="email" name="email" required>
+                </md-input-container>
+                <div ng-show="registerForm.$submitted || registerForm.email.$touched">                      
+                       <div class="error" ng-show="registerForm.email.$invalid">Email invalid.</div>
+                    </div>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Mobile</label>
+                    <input ng-model="user.number" type="number" name="number" required>
+                </md-input-container>
+                <div ng-show="registerForm.$submitted || registerForm.number.$touched">                      
+                       <div class="error" ng-show="registerForm.number.$invalid">Email invalid.</div>
+                    </div>
+                
+                 <md-button  class="md-raised md-primary" ng-disabled ="registerForm.$invalid" ng-click =register()>Register</md-button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -8,7 +8,7 @@
     </head>
 
     <body layout="row" ng-controller="MainController">
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-show ="app.showNavBar">
             <md-toolbar class="md-tall md-hue-2">
                 <span flex></span>
                 <div layout="column" class="md-toolbar-tools-bottom inset">
@@ -104,6 +104,7 @@
         <script src="/static/js/directive/custom-directive.js"></script>
         <script src="/static/js/controller/DashboardController.js"></script>
         <script src="/static/js/controller/FriendsController.js"></script>
+        <script src="/static/js/controller/RegisterController.js"></script>
     </body>
 
 </html>
